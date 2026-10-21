@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Virtual Dock: como instalar e jogar</title>
+<style>
+  :root { --fundo: #F5F3EF; --cartao: #FFFFFF; --borda: #E4DDD3; --texto: #0D0D0D; --suave: #6B635B; --destaque: #E63900; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fundo: #141210; --cartao: #1E1B18; --borda: #3A342E; --texto: #F2EEE8; --suave: #A39A90; --destaque: #FF6A3D; } }
+  :root[data-theme="dark"] { --fundo: #141210; --cartao: #1E1B18; --borda: #3A342E; --texto: #F2EEE8; --suave: #A39A90; --destaque: #FF6A3D; }
+
+  body { margin: 0; background: var(--fundo); color: var(--texto); font-family: "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.6; }
+  a { color: var(--destaque); }
+  header.topo { position: sticky; top: 0; background: var(--fundo); border-bottom: 1.5px solid var(--borda); z-index: 2; }
+  .topo-in { max-width: 920px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  .marca { display: flex; align-items: center; gap: 10px; font-weight: 700; text-decoration: none; color: var(--texto); }
+  .marca img { width: 36px; height: 36px; border-radius: 10px; }
+  nav a { margin-left: 16px; color: var(--suave); text-decoration: none; font-size: 15px; }
+  nav a:hover { color: var(--destaque); }
+
+  main { max-width: 920px; margin: 0 auto; padding: 36px 20px 72px; }
+  section { margin-top: 48px; scroll-margin-top: 80px; }
+  h1 { font-size: 36px; line-height: 1.2; margin: 0 0 14px; }
+  h2 { font-size: 26px; margin: 0 0 14px; }
+  h3 { font-size: 19px; margin: 24px 0 10px; }
+  p { margin: 0 0 12px; }
+  .suave { color: var(--suave); }
+
+  .cartao { background: var(--cartao); border: 1.5px solid var(--borda); border-radius: 24px; padding: 22px 24px; }
+  .botoes { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+  .botao { display: inline-block; padding: 12px 20px; border-radius: 14px; background: var(--destaque); color: #fff; font-weight: 700; text-decoration: none; }
+  .botao.secundario { background: transparent; color: var(--destaque); border: 1.5px solid var(--destaque); }
+  .nota { font-size: 14px; color: var(--suave); margin-top: 12px; }
+
+  .grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  figure { margin: 0; }
+  figure img { width: 100%; border-radius: 18px; border: 1.5px solid var(--borda); display: block; }
+  figcaption { font-size: 14px; color: var(--suave); margin-top: 8px; }
+
+  ol.passos { padding-left: 22px; margin: 0; }
+  ol.passos li { margin-bottom: 10px; }
+  code { background: var(--cartao); border: 1px solid var(--borda); border-radius: 6px; padding: 1px 6px; font-size: 14px; }
+  .aviso { border-left: 4px solid var(--destaque); padding: 10px 14px; background: var(--cartao); border-radius: 12px; margin-top: 12px; }
+
+  footer { margin-top: 56px; padding-top: 24px; border-top: 1.5px solid var(--borda); font-size: 14px; color: var(--suave); }
+
+  @media (max-width: 600px) {
+    h1 { font-size: 28px; }
+    nav a { margin-left: 10px; font-size: 14px; }
+    main { padding: 24px 16px 56px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="#"><img src="logo.png" alt="">Virtual Dock</a>
+    <nav>
+      <a href="#recursos">Recursos</a>
+      <a href="#capturas">Capturas</a>
+      <a href="#instalar">Instalar</a>
+      <a href="#antes">Antes de instalar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section id="inicio" style="margin-top: 12px;">
+    <h1>Veja seu Switch na TV, sem fio ou pelo cabo.</h1>
+    <p>O Virtual Dock recebe a imagem do seu Switch pela rede Wi-Fi e mostra na TV Android. Quando você encaixa o console na base, a TV passa a mostrar a imagem em 1080p pelo HDMI, sem app nenhum.</p>
+    <div class="cartao">
+      <p><strong>Gratuito.</strong> Para Switch com Atmosphère e com o SysDVR instalado.</p>
+      <p class="suave">Funciona em Android TV, Google TV, Fire TV Stick e TV Box.</p>
+      <div class="botoes">
+        <a class="botao" href="#instalar">Ver como instalar</a>
+        <a class="botao secundario" href="#antes">O que você precisa</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="recursos">
+    <h2>O que o Virtual Dock faz</h2>
+    <p class="suave">Tudo é configurado no próprio Switch e na TV. Você não precisa editar arquivos.</p>
+    <div class="grade">
+      <div class="cartao">
+        <h3>Modo automático</h3>
+        <p>Na base, o Switch transmite pelo cabo HDMI (1080p). Na mão, transmite pelo Wi-Fi (720p). A troca acontece sozinha, sem reiniciar.</p>
+      </div>
+      <div class="cartao">
+        <h3>Pareamento sem câmera</h3>
+        <p>A TV encontra o Switch sozinha na mesma rede. Se preferir, digite o IP que aparece no console.</p>
+      </div>
+      <div class="cartao">
+        <h3>Teste de rede</h3>
+        <p>Antes de jogar, o app mede o Wi-Fi e diz se a conexão está boa para transmitir.</p>
+      </div>
+      <div class="cartao">
+        <h3>Perfis por jogo</h3>
+        <p>Você escolhe modo e prioridade para cada jogo. Os ajustes ficam salvos.</p>
+      </div>
+      <div class="cartao">
+        <h3>Apagar a tela</h3>
+        <p>A tela do Switch pode ficar apagada durante a transmissão, para economizar bateria.</p>
+      </div>
+      <div class="cartao">
+        <h3>Overlay dentro do jogo</h3>
+        <p>Com o Tesla instalado, você liga ou desliga a transmissão sem sair do jogo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="capturas">
+    <h2>Como fica na TV</h2>
+    <p class="suave">Captura real do app na Android TV.</p>
+    <figure>
+      <img src="capturas/tela-tv.png" alt="Tela do Virtual Dock na Android TV">
+      <figcaption>Tela inicial do Virtual Dock na TV, com o Switch encontrado na rede.</figcaption>
+    </figure>
+  </section>
+
+  <section id="instalar">
+    <h2>Como instalar</h2>
+    <p>São duas partes: colocar os arquivos no Switch e instalar o app na TV.</p>
+
+    <h3>1. No Switch (cartão SD)</h3>
+    <ol class="passos">
+      <li>Baixe o <strong>SysDVR</strong> (versão 6.x, o arquivo <code>SysDVR.zip</code>) em <a href="https://github.com/exelix11/SysDVR/releases">github.com/exelix11/SysDVR/releases</a>. Não use o pacote "USB-Only".</li>
+      <li>Descompacte o SysDVR na raiz do cartão SD. Ele cria as pastas <code>atmosphere</code>, <code>config</code> e <code>switch</code>.</li>
+      <li>Copie os arquivos do Virtual Dock para a mesma raiz, mesclando as pastas. Os caminhos são:
+        <ul>
+          <li><code>switch/VirtualDock/VirtualDock.nro</code>: o app</li>
+          <li><code>atmosphere/contents/4200000000004A54/</code>: o módulo de fundo, que troca o modo sozinho</li>
+          <li><code>switch/.overlays/VirtualDock.ovl</code>: o overlay (opcional, precisa do Tesla)</li>
+        </ul>
+      </li>
+      <li>Quando o Windows perguntar sobre arquivos com o mesmo nome, escolha <strong>Não copiar</strong> para manter os que já estão no cartão.</li>
+      <li>Reinicie o Switch. O SysDVR leva uns 20 segundos para começar depois de ligar.</li>
+    </ol>
+    <p class="nota"><a href="downloads/Virtual-Dock-Switch.zip">Baixar o pacote do Virtual Dock para o Switch (.zip)</a>. Descompacte e copie as pastas para a raiz do cartão SD.</p>
+
+    <h3>2. Na TV</h3>
+    <ol class="passos">
+      <li>Baixe o arquivo <a href="downloads/Virtual-Dock-TV.apk"><strong>Virtual-Dock-TV.apk</strong></a> e envie para a TV.</li>
+      <li>Na TV, libere a instalação de apps desconhecidos para o gerenciador de arquivos: <em>Configurações → Privacidade de dispositivo (ou Segurança) → Apps desconhecidos</em>.</li>
+      <li>Abra o APK com um gerenciador de arquivos (por exemplo, X-plore ou File Commander), ou envie pelo app Send Files to TV.</li>
+      <li>Instale. O app aparece na tela inicial como <strong>Virtual Dock</strong>.</li>
+    </ol>
+    <p class="nota">No Fire TV Stick, use o app Downloader para abrir o link do APK.</p>
+
+    <h3>3. Parear e jogar</h3>
+    <ol class="passos">
+      <li>Abra o Virtual Dock no Switch uma vez. O cartão grande mostra o modo atual: <strong>Modo Sem Fio · 720p</strong> ou <strong>Modo Cabo · 1080p</strong>.</li>
+      <li>Abra o Virtual Dock na TV. Se o Switch aparecer sozinho, aperte <strong>Jogar agora</strong>.</li>
+      <li>Se não aparecer, escolha <strong>Digitar o IP</strong> e use o endereço que aparece na tela do Switch (exemplo: <code>192.168.0.20 : 9911</code>).</li>
+      <li>Para abrir o app no Switch durante um jogo, segure <strong>R</strong> ao abrir o jogo e escolha <strong>Virtual Dock</strong>.</li>
+    </ol>
+
+    <h3>Na base (cabo)</h3>
+    <p>Encaixe o Switch na base com o HDMI ligado na TV e troque a entrada da TV para o HDMI. Se a TV mostrar <strong>"Switch conectado por cabo"</strong>, isso é normal, não é erro.</p>
+  </section>
+
+  <section id="antes">
+    <h2>Antes de instalar</h2>
+    <div class="cartao">
+      <h3 style="margin-top: 0;">O que você precisa</h3>
+      <ul>
+        <li>Switch com Atmosphère (desbloqueado) e cartão SD.</li>
+        <li>SysDVR 6.x instalado no Switch.</li>
+        <li>TV Android TV, Google TV, Fire TV Stick ou TV Box, na mesma rede Wi-Fi do Switch.</li>
+        <li>Para o modo cabo: a base original, ou um adaptador USB-C para HDMI compatível com Switch, com carga USB-C (PD) e a fonte original.</li>
+      </ul>
+      <h3>Limites</h3>
+      <ul>
+        <li><strong>Switch Lite</strong> não tem saída de vídeo por cabo. Nele só funciona o modo sem fio.</li>
+        <li>No modo sem fio a imagem é 720p, com atraso de 80 a 150 ms.</li>
+        <li>Alguns jogos bloqueiam a captura de imagem.</li>
+      </ul>
+      <div class="aviso">
+        <strong>Dica de rede:</strong> use roteador 5 GHz, escolha um canal Wi-Fi livre e, se puder, ligue a TV Box no cabo de rede.
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Virtual Dock é um projeto independente. Não tem ligação com a Nintendo, a Sony ou a Google.</p>
+    <p>Usa o SysDVR (exelix11), o Atmosphère, o libnx, o Borealis e o libtesla.</p>
+    <p><a href="privacidade.html">Política de privacidade</a></p>
+  </footer>
+
+</main>
+
+</body>
+</html>
